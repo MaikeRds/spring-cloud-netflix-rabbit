@@ -35,4 +35,6 @@ public class ProdutoDTO implements Serializable {
 	@JsonProperty("preco")
 	private Double preco;
 
+
+
 }

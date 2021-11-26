@@ -2,6 +2,8 @@ package com.example.crud.dtos;
 
 import java.io.Serializable;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -18,8 +20,8 @@ import lombok.ToString;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
-public class ProdutoDTO implements Serializable {
+@EqualsAndHashCode(callSuper =  false)
+public class ProdutoDTO extends RepresentationModel<ProdutoDTO> implements Serializable {
 
 	private static final long serialVersionUID = -4507889513870863178L;
 

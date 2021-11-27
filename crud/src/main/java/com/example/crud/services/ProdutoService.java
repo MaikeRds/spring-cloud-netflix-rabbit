@@ -11,6 +11,7 @@ import com.example.crud.dtos.ProdutoDTO;
 import com.example.crud.entities.Produto;
 import com.example.crud.exceptions.ResourceNotFoundException;
 import com.example.crud.mappers.ProdutoMapper;
+import com.example.crud.messages.ProdutoSendMessage;
 import com.example.crud.repositories.ProdutoRepository;
 
 @Service
@@ -19,9 +20,13 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository produtoRepository;	
 	
+	@Autowired
+	private ProdutoSendMessage produtoSendMessage;
+	
 	
 	public ProdutoDTO create(ProdutoDTO produtoDTO) {
 		Produto produto = produtoRepository.save(ProdutoMapper.toModel(produtoDTO));
+		produtoSendMessage.sendMessage(ProdutoMapper.toDTO(produto));
 		return ProdutoMapper.toDTO(produto);
 	}
 	

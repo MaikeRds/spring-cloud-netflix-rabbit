@@ -41,6 +41,13 @@ crud:
     exchange: crud.exchange
     routingkey: crud.produto.routingkey
 
+eureka:
+  instance: 
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/registry/eureka
+
 # Logger configuration
 logging:
   pattern:

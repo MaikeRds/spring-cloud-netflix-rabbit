@@ -40,6 +40,13 @@ crud:
   rabbitmq:
     exchange: crud.exchange
     queue: crud.produto.queue
+    
+eureka:
+  instance: 
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/registry/eureka
 
 # Logger configuration
 logging:

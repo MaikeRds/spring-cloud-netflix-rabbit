@@ -1,0 +1,25 @@
+# Server configuration
+server:
+  port: 8761
+  servlet:
+    context-path: /registry
+
+# Spring Boot configuration
+spring:
+  application:
+    name: registry
+
+#
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/registry/eureka/
+
+# Logger configuration
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: info

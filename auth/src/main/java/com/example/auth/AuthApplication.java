@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -13,6 +14,7 @@ import com.example.auth.entities.User;
 import com.example.auth.repositories.PermissionRepository;
 import com.example.auth.repositories.UserRepository;
 
+@EnableEurekaClient
 @SpringBootApplication
 public class AuthApplication {
 

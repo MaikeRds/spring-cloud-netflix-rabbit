@@ -1,0 +1,39 @@
+# Server configuration
+server:
+  port: 8083
+  servlet:
+    context-path: /auth
+
+# Spring Boot configuration
+spring:
+  application:
+    name: auth
+
+# JPA properties
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false      
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    open-in-view: false
+    generate-ddl: true
+    
+# Database
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5434/auth
+    username: postgres
+    password: postgres
+    
+  jmx:
+    enabled: false
+    
+    
+security:
+  jwt:
+    token: 
+      secret-key: chave_microservices
+      expire-length: 360000  
+      
+
